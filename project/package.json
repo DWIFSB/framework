@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@types/node": "^25.3.2",
+    "prisma": "^7.4.1"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.14",
+    "@prisma/adapter-pg": "^7.4.1",
+    "@prisma/client": "^7.4.1",
+    "pg": "^8.19.0"
+  }
+}
