@@ -1,3 +1,4 @@
+import { Logger, NotFoundException } from "@nestjs/common";
 import { Injectable } from "@nestjs/common/decorators/core/injectable.decorator";
 
 @Injectable()
@@ -7,3 +8,21 @@ import { Injectable } from "@nestjs/common/decorators/core/injectable.decorator"
         return  await this.prisma.todo.Delete( ); 
         }
     }
+asyc execute (id:string) {
+
+try {
+    this.logger.log('Deleting toDo');
+
+    const todo= await this.findTodoByidRepository.findByid(id);
+
+    if (!todo) {
+        throw new NotFoundException('toDo not found');
+
+    }
+}
+    await this.deleteTodoRepository.delete(id);
+    this.logger.log('toDo deleted succe')
+    return
+
+
+}
